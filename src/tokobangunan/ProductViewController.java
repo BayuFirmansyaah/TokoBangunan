@@ -14,8 +14,10 @@ import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -37,6 +39,15 @@ public class ProductViewController implements Initializable {
 
     @FXML
     private TableColumn<getProductData, Integer> c_product_stock;
+    
+     @FXML
+    private TextField input_product_id;
+
+    @FXML
+    private TextField input_product_name;
+
+    @FXML
+    private TextField input_product_stock;
     
 
     /**
@@ -70,6 +81,47 @@ public class ProductViewController implements Initializable {
         }catch(SQLException e){
             System.out.println(e);
         }  
+    }
+    
+//    insert data
+    public void insertData(){
+        String id = input_product_id.getText();
+        String Product_Name = input_product_name.getText();
+        String stock = input_product_stock.getText();
+        int Product_Id = Integer.parseInt(id);
+        int Stock = Integer.parseInt(stock);
+        
+        String sql = "INSERT INTO product (Product_ID, Product_name, Stock) VALUES("+Product_Id+",'"+Product_Name+"',"+ Stock  +")";
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        
+        try{
+            java.sql.Connection conn = (Connection)KoneksiDatabase.koneksiDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+
+            alert.setTitle("Berhasil!!");
+            alert.setHeaderText(null);
+            alert.setContentText("Berhasil Menambahkan Data Product");
+            alert.showAndWait();
+            
+            this.Clean();
+            
+            TableViews.getItems().clear();
+            this.getData();
+
+        }catch(SQLException e){
+            alert.setTitle("Warning!!");
+            alert.setHeaderText(null);
+            alert.setContentText(""+e);
+            alert.showAndWait();
+        }
+    }
+    
+    public void Clean(){
+        input_product_id.setText("");
+        input_product_name.setText("");
+        input_product_stock.setText("");
     }
     
 }

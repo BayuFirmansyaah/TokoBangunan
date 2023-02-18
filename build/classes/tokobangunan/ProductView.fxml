@@ -33,12 +33,12 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="126.0" layoutY="22.0" prefHeight="25.0" prefWidth="207.0" />
-            <TextField layoutX="126.0" layoutY="65.0" prefHeight="25.0" prefWidth="207.0" />
-            <TextField layoutX="126.0" layoutY="109.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="input_product_id" layoutX="126.0" layoutY="22.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="input_product_name" layoutX="126.0" layoutY="65.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="input_product_stock" layoutX="126.0" layoutY="109.0" prefHeight="25.0" prefWidth="207.0" />
          </children>
       </Pane>
-      <Button layoutX="693.0" layoutY="518.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
+      <Button layoutX="693.0" layoutY="518.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
       <Button layoutX="693.0" layoutY="556.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Keluar" />
       <TableView fx:id="TableViews" layoutX="14.0" layoutY="270.0" prefHeight="312.0" prefWidth="670.0">
         <columns>
