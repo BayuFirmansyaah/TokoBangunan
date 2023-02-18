@@ -16,7 +16,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  *
@@ -37,6 +40,15 @@ public class VendorViewController implements Initializable {
 
     @FXML
     private TableColumn<getVendorData, String> c_vendor_add;
+    
+     @FXML
+    private TextField input_vendor_addres;
+
+    @FXML
+    private TextField input_vendor_id;
+
+    @FXML
+    private TextField input_vendor_name;
     
       @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,4 +81,44 @@ public class VendorViewController implements Initializable {
         }  
     }
 
+    
+//    insert data
+    public void insertData(){
+        String id = input_vendor_id.getText();
+        String Vendor_Name = input_vendor_name.getText();
+        String Vendor_Address = input_vendor_addres.getText();
+        int Vendor_Id = Integer.parseInt(id);
+        
+        String sql = "INSERT INTO vendor (Vendor_ID, Vendor_Name, Vendor_Add) VALUES("+Vendor_Id+",'"+Vendor_Name+"','"+ Vendor_Address  +"')";
+        
+        Alert alert = new Alert(AlertType.INFORMATION);
+        
+        try{
+            java.sql.Connection conn = (Connection)KoneksiDatabase.koneksiDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+
+            alert.setTitle("Berhasil!!");
+            alert.setHeaderText(null);
+            alert.setContentText("Berhasil Menambahkan Data Vendor");
+            alert.showAndWait();
+            
+            this.Clean();
+            
+            TableViews.getItems().clear();
+            this.getData();
+
+        }catch(SQLException e){
+            alert.setTitle("Warning!!");
+            alert.setHeaderText(null);
+            alert.setContentText(""+e);
+            alert.showAndWait();
+        }
+    }
+    
+    public void Clean(){
+        input_vendor_id.setText("");
+        input_vendor_name.setText("");
+        input_vendor_addres.setText("");
+    }
 }

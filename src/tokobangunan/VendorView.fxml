@@ -33,9 +33,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="126.0" layoutY="22.0" prefHeight="25.0" prefWidth="207.0" />
-            <TextField layoutX="126.0" layoutY="66.0" prefHeight="25.0" prefWidth="207.0" />
-            <TextField layoutX="126.0" layoutY="109.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="input_vendor_id" layoutX="126.0" layoutY="22.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="input_vendor_name" layoutX="126.0" layoutY="66.0" prefHeight="25.0" prefWidth="207.0" />
+            <TextField fx:id="input_vendor_addres" layoutX="126.0" layoutY="109.0" prefHeight="25.0" prefWidth="207.0" />
          </children>
       </Pane>
       <TableView fx:id="TableViews" layoutX="19.0" layoutY="268.0" prefHeight="306.0" prefWidth="642.0">
@@ -45,7 +45,7 @@
             <TableColumn fx:id="c_vendor_add" prefWidth="308.0" text="Alamat Vendor" />
         </columns>
       </TableView>
-      <Button layoutX="670.0" layoutY="508.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Simpan" />
+      <Button fx:id="button_submit" layoutX="670.0" layoutY="508.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="120.0" text="Simpan" />
       <Button layoutX="670.0" layoutY="549.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Keluar" />
       <Label layoutX="19.0" layoutY="233.0" text="Table Vendor">
          <font>
