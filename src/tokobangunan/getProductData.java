@@ -7,7 +7,7 @@ package tokobangunan;
 
 /**
  *
- * @author Bayu Sevima
+ * @author Kiara Yasmin
  */
 public class getProductData {
     int Product_ID,Stock;

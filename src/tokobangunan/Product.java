@@ -22,7 +22,7 @@ public class Product extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("ProductView.fxml"));
 
         Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("Dashboard");
+        stage.setTitle("Product");
         stage.centerOnScreen();
         stage.setScene(scene);
         stage.show();

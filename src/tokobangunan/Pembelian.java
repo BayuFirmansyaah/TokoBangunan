@@ -5,10 +5,33 @@
  */
 package tokobangunan;
 
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  *
- * @author Bayu Sevima
+ * @author Kiara Yasmin
  */
-public class Pembelian {
-    
+public class Pembelian extends Application {
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("PembelianView.fxml"));
+
+        Scene scene = new Scene(root, 800, 600);
+        stage.setTitle("Pembelian");
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+     /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
