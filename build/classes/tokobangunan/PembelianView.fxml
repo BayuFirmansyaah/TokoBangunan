@@ -49,7 +49,7 @@
             </Label>
          </children>
       </Pane>
-      <Button layoutX="674.0" layoutY="508.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
+      <Button layoutX="674.0" layoutY="508.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
       <Button layoutX="675.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Keluar" />
       <Label layoutX="26.0" layoutY="268.0" prefHeight="17.0" prefWidth="149.0" text="PURCHASE DETAIL">
          <font>
@@ -63,13 +63,13 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id11" layoutX="18.0" layoutY="403.0" prefHeight="25.0" prefWidth="115.0" />
+      <TextField fx:id="input_list_id2" layoutX="18.0" layoutY="403.0" prefHeight="25.0" prefWidth="115.0" />
       <Label layoutX="20.0" layoutY="381.0" text="Product ID 2">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id111" layoutX="18.0" layoutY="462.0" prefHeight="25.0" prefWidth="115.0" />
+      <TextField fx:id="input_list_id3" layoutX="18.0" layoutY="462.0" prefHeight="25.0" prefWidth="115.0" />
       <Label layoutX="19.0" layoutY="441.0" text="Product ID 3">
          <font>
             <Font size="14.0" />
@@ -80,9 +80,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id12" layoutX="160.0" layoutY="339.0" prefHeight="25.0" prefWidth="149.0" />
-      <TextField fx:id="input_list_id121" layoutX="160.0" layoutY="403.0" prefHeight="25.0" prefWidth="149.0" />
-      <TextField fx:id="input_list_id1211" layoutX="160.0" layoutY="462.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="input_list_name1" layoutX="160.0" layoutY="339.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="input_list_name2" layoutX="160.0" layoutY="403.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="input_list_name3" layoutX="160.0" layoutY="462.0" prefHeight="25.0" prefWidth="149.0" />
       <Label layoutX="161.0" layoutY="381.0" text="Nama Product 2">
          <font>
             <Font size="14.0" />
@@ -98,9 +98,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id122" layoutX="334.0" layoutY="339.0" prefHeight="25.0" prefWidth="88.0" />
-      <TextField fx:id="input_list_id1221" layoutX="334.0" layoutY="403.0" prefHeight="25.0" prefWidth="88.0" />
-      <TextField fx:id="input_list_id12211" layoutX="334.0" layoutY="462.0" prefHeight="25.0" prefWidth="88.0" />
+      <TextField fx:id="input_list_qty1" layoutX="334.0" layoutY="339.0" prefHeight="25.0" prefWidth="88.0" />
+      <TextField fx:id="input_list_qty2" layoutX="334.0" layoutY="403.0" prefHeight="25.0" prefWidth="88.0" />
+      <TextField fx:id="input_list_qty3" layoutX="334.0" layoutY="462.0" prefHeight="25.0" prefWidth="88.0" />
       <Label layoutX="334.0" layoutY="381.0" text="Quantity 2">
          <font>
             <Font size="14.0" />
@@ -111,14 +111,14 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id1222" layoutX="449.0" layoutY="339.0" prefHeight="25.0" prefWidth="121.0" />
+      <TextField fx:id="input_list_price1" layoutX="449.0" layoutY="339.0" prefHeight="25.0" prefWidth="121.0" />
       <Label layoutX="449.0" layoutY="316.0" text="Price 1">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id12221" layoutX="449.0" layoutY="403.0" prefHeight="25.0" prefWidth="121.0" />
-      <TextField fx:id="input_list_id122211" layoutX="449.0" layoutY="462.0" prefHeight="25.0" prefWidth="121.0" />
+      <TextField fx:id="input_list_price2" layoutX="449.0" layoutY="403.0" prefHeight="25.0" prefWidth="121.0" />
+      <TextField fx:id="input_list_price3" layoutX="449.0" layoutY="462.0" prefHeight="25.0" prefWidth="121.0" />
       <Label layoutX="449.0" layoutY="381.0" text="Price 2">
          <font>
             <Font size="14.0" />
@@ -129,19 +129,19 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id12222" layoutX="598.0" layoutY="339.0" prefHeight="25.0" prefWidth="179.0" />
+      <TextField fx:id="input_list_stotal1" layoutX="598.0" layoutY="339.0" prefHeight="25.0" prefWidth="179.0" />
       <Label layoutX="599.0" layoutY="317.0" text="Sub Total 1">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id122221" layoutX="598.0" layoutY="403.0" prefHeight="25.0" prefWidth="179.0" />
+      <TextField fx:id="input_list_stotal2" layoutX="598.0" layoutY="403.0" prefHeight="25.0" prefWidth="179.0" />
       <Label layoutX="599.0" layoutY="381.0" text="Sub Total 2">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="input_list_id1222211" layoutX="598.0" layoutY="462.0" prefHeight="25.0" prefWidth="179.0" />
+      <TextField fx:id="input_list_stotal3" layoutX="598.0" layoutY="462.0" prefHeight="25.0" prefWidth="179.0" />
       <Label layoutX="599.0" layoutY="441.0" text="Sub Total3">
          <font>
             <Font size="14.0" />
