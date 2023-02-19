@@ -84,6 +84,10 @@ public class PembelianViewController implements Initializable {
 
     @FXML
     private TextField input_list_stotal3;
+    
+     @FXML
+    private TextField grand_total;
+
 
 
     /**
@@ -131,6 +135,8 @@ public class PembelianViewController implements Initializable {
         int Vendor_ID = Integer.parseInt(vendor_id);
         String Vendor_RefNo = input_vendor_ref.getText();
         
+        int total = 0;
+        
         String sql = "INSERT INTO purchase (Purchase_ID, Purchase_Date, Vendor_ID, Vendor_RefNo) VALUES("+Purchase_ID+",'"+Purchase_Date+"',"+ Vendor_ID  +",'"+ Vendor_RefNo +"')";
         
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -149,6 +155,7 @@ public class PembelianViewController implements Initializable {
             
             if(!id1.isEmpty() && !name1.isEmpty() && !price1.isEmpty() && !qty1.isEmpty() && !stotal1.isEmpty()){
                 insertIntoPurchaseDetail(Purchase_ID, Integer.parseInt(id1), Integer.parseInt(qty1), Integer.parseInt(price1));
+                total += Integer.parseInt(stotal1);
             }
             
 //            insert data product ke 2
@@ -160,6 +167,7 @@ public class PembelianViewController implements Initializable {
             
             if(!id2.isEmpty() && !name2.isEmpty() && !price2.isEmpty() && !qty2.isEmpty() && !stotal2.isEmpty()){
                 insertIntoPurchaseDetail(Purchase_ID, Integer.parseInt(id2), Integer.parseInt(qty2), Integer.parseInt(price2));
+                total += Integer.parseInt(stotal2);
             }
             
 //             insert data product ke 3
@@ -171,9 +179,10 @@ public class PembelianViewController implements Initializable {
             
             if(!id3.isEmpty() && !name3.isEmpty() && !price3.isEmpty() && !qty3.isEmpty() && !stotal3.isEmpty()){
                 insertIntoPurchaseDetail(Purchase_ID, Integer.parseInt(id3), Integer.parseInt(qty3), Integer.parseInt(price3));
+                total += Integer.parseInt(stotal3);
             }
             
-            
+            grand_total.setText(""+total);
             
         }catch(SQLException e){
             alert.setTitle("Warning!!");
@@ -194,7 +203,6 @@ public class PembelianViewController implements Initializable {
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             
-            System.out.println("Berhasil menambahkan ke tabel purchase detail");
             
 //            update stock product
             updateProduct(Product_ID, Qty);
@@ -218,7 +226,6 @@ public class PembelianViewController implements Initializable {
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
             
-            System.out.println("Berhasil melakukan update jumlah product");
         }catch(SQLException e){
             System.out.println(e);
         } 
@@ -239,7 +246,6 @@ public class PembelianViewController implements Initializable {
             System.out.println(e);
         }
          
-         System.out.println(stock);
          return stock;
     }
     

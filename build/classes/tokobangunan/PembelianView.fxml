@@ -47,6 +47,12 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <Label layoutX="482.0" layoutY="11.0" text="Grand Total" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="grand_total" layoutX="482.0" layoutY="32.0" onAction="#getDetailVendor" prefHeight="25.0" prefWidth="207.0" />
          </children>
       </Pane>
       <Button layoutX="674.0" layoutY="508.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
