@@ -20,6 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  *
@@ -120,5 +122,13 @@ public class VendorViewController implements Initializable {
         input_vendor_id.setText("");
         input_vendor_name.setText("");
         input_vendor_addres.setText("");
+    }
+    
+     @FXML
+    private Button closeButton;
+     
+    public void keluar(){
+       Stage stage = (Stage) closeButton.getScene().getWindow();
+       stage.close();
     }
 }

@@ -46,7 +46,7 @@
         </columns>
       </TableView>
       <Button fx:id="button_submit" layoutX="670.0" layoutY="508.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="120.0" text="Simpan" />
-      <Button layoutX="670.0" layoutY="549.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Keluar" />
+      <Button fx:id="closeButton" layoutX="670.0" layoutY="549.0" mnemonicParsing="false" onAction="#keluar" prefHeight="25.0" prefWidth="120.0" text="Keluar" />
       <Label layoutX="19.0" layoutY="233.0" text="Table Vendor">
          <font>
             <Font size="16.0" />

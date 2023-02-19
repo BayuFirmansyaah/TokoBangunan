@@ -15,10 +15,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -122,6 +124,14 @@ public class ProductViewController implements Initializable {
         input_product_id.setText("");
         input_product_name.setText("");
         input_product_stock.setText("");
+    }
+    
+     @FXML
+    private Button closeButton;
+     
+    public void keluar(){
+       Stage stage = (Stage) closeButton.getScene().getWindow();
+       stage.close();
     }
     
 }

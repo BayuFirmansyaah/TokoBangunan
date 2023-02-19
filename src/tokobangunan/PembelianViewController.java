@@ -12,12 +12,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import database.KoneksiDatabase;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import javafx.scene.control.Alert;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -87,7 +85,7 @@ public class PembelianViewController implements Initializable {
     
      @FXML
     private TextField grand_total;
-
+     
 
 
     /**
@@ -249,7 +247,13 @@ public class PembelianViewController implements Initializable {
          return stock;
     }
     
-   
+     @FXML
+    private Button closeButton;
+     
+    public void keluar(){
+       Stage stage = (Stage) closeButton.getScene().getWindow();
+       stage.close();
+    }
     
-    
+       
 }

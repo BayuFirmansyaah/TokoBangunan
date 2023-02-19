@@ -39,7 +39,7 @@
          </children>
       </Pane>
       <Button layoutX="693.0" layoutY="518.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
-      <Button layoutX="693.0" layoutY="556.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Keluar" />
+      <Button fx:id="closeButton" layoutX="693.0" layoutY="556.0" mnemonicParsing="false" onAction="#keluar" prefHeight="25.0" prefWidth="102.0" text="Keluar" />
       <TableView fx:id="TableViews" layoutX="14.0" layoutY="270.0" prefHeight="312.0" prefWidth="670.0">
         <columns>
           <TableColumn fx:id="c_product_id" prefWidth="141.0" text="Product ID" />

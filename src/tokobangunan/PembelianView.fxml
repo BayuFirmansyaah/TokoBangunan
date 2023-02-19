@@ -56,7 +56,7 @@
          </children>
       </Pane>
       <Button layoutX="674.0" layoutY="508.0" mnemonicParsing="false" onAction="#insertData" prefHeight="25.0" prefWidth="102.0" text="Simpan" />
-      <Button layoutX="675.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Keluar" />
+      <Button fx:id="closeButton" layoutX="675.0" layoutY="548.0" mnemonicParsing="false" onAction="#keluar" prefHeight="25.0" prefWidth="102.0" text="Keluar" />
       <Label layoutX="26.0" layoutY="268.0" prefHeight="17.0" prefWidth="149.0" text="PURCHASE DETAIL">
          <font>
             <Font size="16.0" />
